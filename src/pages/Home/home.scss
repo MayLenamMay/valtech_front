@@ -1,0 +1,66 @@
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 50px;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  .citiesList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: grid;
+    gap: 15px;
+  }
+
+.citiesList > *:nth-child(6n + 1),
+.citiesList > *:nth-child(6n + 6) {
+  grid-column: auto / span 2;
+  
+}
+.banner {
+margin-bottom: 40px;
+}
+
+
+@media (max-width: 1024px) {
+    .citiesList {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+    .citiesList > *:nth-child(6n + 1),
+    .citiesList > *:nth-child(6n + 6) {
+        grid-column: auto ;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .citiesList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+}
+@media (max-width: 767px) {
+    .citiesList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+}
+@media (max-width: 575px) {
+    .citiesList {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+}

@@ -1,0 +1,40 @@
+.btn-link {
+    padding: 7px 10px;
+    border: 1px solid white;
+    color: white;
+    position: relative;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s;
+    &:before {
+        content:'';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        width: 0;
+        height: 100%;
+        will-change: width;
+        transition: all 0.3s;
+        z-index: -1;
+    }
+    &:hover {
+        color: black;
+        &:before {
+            width: 100%;
+        }
+    }
+    &.link {
+        border: none;
+        text-decoration: underline;
+        &:before {
+            content:none;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+  }

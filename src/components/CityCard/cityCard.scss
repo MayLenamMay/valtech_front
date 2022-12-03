@@ -1,0 +1,108 @@
+.cityCard {
+    height: 400px; // To change with ratio
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+     &__img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+     }
+     &__wrapper {
+        color: white;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        h1, h2 {
+            font-size: 40px;
+            font-weight: 500;
+        }
+        .cityCard__desc {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+     }
+     &__header {
+        text-transform: uppercase;
+        .sub_tile {
+            margin-bottom: 10px;
+        }
+     }
+     &.hover {
+        cursor: pointer;
+        border-radius: 10px;
+        .cityCard__content {
+            height: 0;
+         }
+         &:hover {
+            &:after {
+                background-color: rgba(0,0,0,0.5);
+             }
+        }
+     }
+     &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.3);
+     }
+}
+@media (max-width: 1024px) {
+    .cityCard {
+        &__wrapper {
+            h2 {
+                font-size: 25px;
+            }
+        }
+        &__desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+}
+@media (max-width: 768px) {
+    .cityCard {
+        &__wrapper {
+            h2 {
+                font-size: 30px;
+            }
+            .cityCard__desc {
+               display: none;
+            }
+        }
+        &__desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &:after {
+            background-color: rgba(0,0,0,0.5);
+         }
+    }
+}
+@media (max-width: 768px) {
+    .cityCard {
+        height: 350px; // To change with ratio
+    }
+}
